@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediVoice AI - Multilingual Healthcare Voice Assistant</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Google Fonts for clean typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <div class="logo-badge">
+                <span class="icon">🩺</span>
+                <span class="badge-text">Healthcare Assistant</span>
+            </div>
+            <h1 class="app-title">MediVoice AI</h1>
+            <p class="app-subtitle">
+                Multilingual Healthcare Voice Assistant supporting <strong>Malayalam</strong> and <strong>English</strong>
+            </p>
+        </header>
+
+        <!-- Main Card Section -->
+        <main class="main-card">
+            <!-- Language Selection -->
+            <div class="language-selector-wrapper">
+                <label for="languageSelect" class="language-label">Speaking Language:</label>
+                <div class="select-container">
+                    <select id="languageSelect" class="language-select">
+                        <option value="ml-IN" selected>Malayalam (മലയാളം)</option>
+                        <option value="en-IN">English (India)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Voice Interaction Area -->
+            <section class="voice-section">
+                <!-- Microphone Button -->
+                <button type="button" class="mic-button" id="micButton" aria-label="Microphone">
+                    <svg class="mic-icon" id="micIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="22"></line>
+                        <line x1="8" y1="22" x2="16" y2="22"></line>
+                    </svg>
+                </button>
+                <p class="status-text" id="statusText">Tap microphone to speak</p>
+                <p class="hint-text" id="hintText">Click once to start recording, click again to stop</p>
+            </section>
+
+            <!-- Transcription Result Area -->
+            <section class="transcript-section" id="transcriptSection">
+                <div class="transcript-header">
+                    <span class="transcript-title">Transcript</span>
+                    <span class="language-badge" id="transcriptBadge">Malayalam (ml-IN)</span>
+                </div>
+                <div class="transcript-box" id="transcriptBox">
+                    <p class="transcript-placeholder" id="transcriptPlaceholder">Your transcribed healthcare query will appear here...</p>
+                    <p class="transcript-content" id="transcriptText"></p>
+                </div>
+            </section>
+
+            <!-- Healthcare Assistant Response Area -->
+            <section class="response-section" id="responseSection">
+                <div class="response-header">
+                    <div class="response-title-wrapper">
+                        <span class="response-icon">🩺</span>
+                        <span class="response-title">Healthcare Assistant Response</span>
+                    </div>
+                    <span class="response-badge" id="responseBadge">Safety Guidance</span>
+                </div>
+                <div class="response-box" id="responseBox">
+                    <p class="response-placeholder" id="responsePlaceholder">Supportive healthcare guidance will appear here after speech transcription...</p>
+                    <div class="response-content" id="responseText"></div>
+                </div>
+                <!-- Listen to Response (TTS) Action -->
+                <div class="response-actions" id="responseActions" style="display: none;">
+                    <button type="button" class="tts-button" id="speakButton" aria-label="Listen to Response">
+                        <span class="tts-icon" id="speakIcon">🔊</span>
+                        <span class="tts-btn-text" id="speakButtonText">Listen to Response</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Notice -->
+        <footer class="app-footer">
+            <p class="disclaimer">
+                <strong>Notice:</strong> MediVoice AI provides general healthcare communication assistance and does not provide medical diagnosis or prescriptions.
+            </p>
+        </footer>
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
