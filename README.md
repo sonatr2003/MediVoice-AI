@@ -55,8 +55,8 @@ MediVoice_AI/
 ### 1. Clone the repository
 
 ```bash
-git clone <your-github-repository-url>
-cd MediVoice_AI
+git clone https://github.com/sonatr2003/MediVoice-AI.git
+cd MediVoice-AI
 ```
 
 ### 2. Create a virtual environment
